@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const routes = require('./routes/ToDoRoute');
 
@@ -12,6 +13,9 @@ mongoose
   .connect(process.env.MONGODB_URL)
   .then(() => console.log(`Connected To MongoDB...`))
   .catch((err) => console.log(err));
+
+app.use(express.json());
+app.use(cors());
 
 app.use(routes);
 
