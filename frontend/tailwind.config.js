@@ -14,6 +14,9 @@ module.exports = {
       dropShadow: {
         md: '0 3px 3px rgba(0, 0, 0, 0.651)',
         lg: '0 6px 6px rgba(0, 0, 0, 0.651)'
+      },
+      fontFamily: {
+        firesans: ['Fire Sans', 'sans-serif']
       }
     },
     screens: {
