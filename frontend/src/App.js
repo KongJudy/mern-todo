@@ -19,7 +19,7 @@ function App() {
   };
 
   return (
-    <div className='App bg-gradient-blue min-h-screen'>
+    <div className='App bg-gradient-purple min-h-screen'>
       <div className='mx-auto  text-center h-full py-10 tracking-widest '>
         <span className='text-4xl font-bold'>To Do List</span>
         <div className='flex justify-center'>
