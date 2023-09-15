@@ -7,15 +7,20 @@ const routes = require('./routes/ToDoRoute');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.port || 5000;
+const PORT = process.env.PORT || 5000;
 
 mongoose
   .connect(process.env.MONGODB_URL)
   .then(() => console.log(`Connected To MongoDB...`))
   .catch((err) => console.log(err));
 
+const corsOptions = {
+  origin: 'https://mern-todo-3d9h.onrender.com/',
+  methods: 'GET, PUT, POST, DELETE'
+};
+
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(routes);
 
