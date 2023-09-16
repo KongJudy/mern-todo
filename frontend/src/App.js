@@ -18,6 +18,8 @@ function App() {
     setToDoId(_id);
   };
 
+  if (!toDo) return <div>Loading...</div>;
+
   return (
     <div className='App bg-gradient-purple min-h-screen'>
       <div className='mx-auto  text-center h-full py-10 tracking-widest '>
