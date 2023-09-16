@@ -7,9 +7,17 @@ function App() {
   const [text, setText] = useState('');
   const [update, setUpdate] = useState(false);
   const [toDoId, setToDoId] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getAllToDo(setToDo);
+    getAllToDo(setToDo)
+      .then(() => {
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      });
   }, []);
 
   const editToDo = (_id, text) => {
@@ -18,7 +26,7 @@ function App() {
     setToDoId(_id);
   };
 
-  if (!toDo) return <div>Loading...</div>;
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div className='App bg-gradient-purple min-h-screen'>
