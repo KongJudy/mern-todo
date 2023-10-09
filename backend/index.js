@@ -15,7 +15,7 @@ mongoose
   .catch((err) => console.log(err));
 
 const corsOptions = {
-  origin: 'https://mern-todo-3d9h.onrender.com',
+  origin: 'https://jk-mern-todo.vercel.app',
   methods: 'GET, PUT, POST, DELETE'
 };
 
